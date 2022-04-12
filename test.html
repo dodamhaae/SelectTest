@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테스트</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">테스트</a>
+    </header>
+    <section>
+        <article>
+            <h2>Q1</h2>
+            <p>-</p>
+            <input type="radio" name="q1" class="high-button"><span>High</span>
+            <input type="radio" name="q1" class="low-button"><span>Low</span>
+            <input type="radio" name="q1" class="medium-button"><span>Medium</span>
+        </article>
+        <article>
+            <h2>Q2</h2>
+            <p>-</p>
+            <input type="radio" name="q2" class="high-button"><span>High</span>
+            <input type="radio" name="q2" class="low-button"><span>Low</span>
+            <input type="radio" name="q2" class="medium-button"><span>Medium</span>
+        </article>
+    </section>
+    <footer>
+        <a onclick="result();">결과확인</a>
+    </footer>
+    <script>
+        function result() {
+            let high_cnt = 0;
+            let low_cnt = 0;
+            let mid_cnt = 0;
+
+            let elements = document.getElementsByClassName('high-button')
+            for (let i = 0; i < elements.length; i++) {
+                if(elements[i].checked) {
+                    high_cnt++
+                }
+            }
+
+            elements = document.getElementsByClassName('low-button')
+            for (let i = 0; i < elements.length; i++) {
+                if(elements[i].checked) {
+                    low_cnt++
+                }
+            }
+
+            elements = document.getElementsByClassName('medium-button')
+            for (let i = 0; i < elements.length; i++) {
+                if(elements[i].checked) {
+                    high_cnt++
+                }
+            }
+            if(high_cnt == 2) {
+                location.href="result_3.html"
+            } else if (high_cnt == 1){
+                location.href="result_2.html"
+            } else {
+                location.href="result_1.html"
+            }
+        }
+    </script>
+</body>
+</html>
