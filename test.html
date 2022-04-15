@@ -56,6 +56,12 @@
                     high_cnt++
                 }
             }
+
+            if(high_cnt + low_cnt != 2) {
+                alert('모든 문항의 답을 선택해 주세요.');
+                return
+            }
+
             if(high_cnt == 2) {
                 location.href="result_3.html"
             } else if (high_cnt == 1){
